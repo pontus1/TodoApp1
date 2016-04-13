@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity=
+              "sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity=
+              "sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        
+        <!-- Style.css -->
+        <link rel="stylesheet" type="text/css" href="style.css"> 
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity=
+        "sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+    </head>
+    <body>
+        <div id="addForm" class="container">
+            <h2>Add activity</h2>
+            <form role="form">
+                <label>Description</label>
+                <input type="text" name="description" id="description" class="form-control" placeholder="Enter description"><br>
+                <label>Duedate</label>
+                <input type="time" name="duedate" id="duedate" class="form-control" placeholder="Enter duedate"><br>
+                <label>Done?</label><input type="checkbox" name="done" value="done">
+                <br>
+                <button type="button" class="btn btn-default" id="btnSubmit">SAVE</button>
+                <button type="button" class="btn btn-default" id="btnCancel">CANCEL</button>
+            </form>
+        </div>
+        <div id="editForm" class="container">
+            <h2 id="editH2">Edit activity</h2>
+            <form action="http://localhost:8080/mavenproject2/MyServlet" method="POST" role="form">
+                <label>Description</label>
+                <input type="text" name="editDescription" id="editDescription" value="" class="form-control" ><br>
+                <label>Duedate</label>
+                <input type="time" name="editDuedate" id="editDuedate" value="" class="form-control" ><br>
+                <label>Done?</label><input type="checkbox" name="editDone" id="editDone" value="done">
+                <br>
+                <input type="submit" value="SAVE CHANGES" id="btnSubmit" class="btn btn-default">
+                <input type="hidden" name="editID" id="editID" value="">
+                <button class="btnCancelEdit btn btn-default" type="button">CANCEL</button>
+            </form>
+        </div> 
+        <br>
+        <br>
+        <div>
+           <!-- <button value="View Activities" id="getAllActivities" class="btn btn-default">View Activities</button> -->
+        </div>
+        
+        <div class="container">
+
+            <table  id="table" class="table table-hover">
+                <caption>Ongoing Todo´s</caption>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Description</th>
+                        <th>Duedate</th>
+                        <th>Status</th>
+                        <th>Options</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+                <button class="btn btn-default" id="btnAddNewActivity">ADD NEW ACTIVITY</button>
+            </table>
+        </div>
+        
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
